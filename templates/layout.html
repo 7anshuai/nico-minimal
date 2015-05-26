@@ -1,0 +1,74 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <meta name="generator" content="{{system.name}} {{system.version}}">
+    <meta name="theme" content="{{theme.name}} {{theme.version}}">
+    <title>{% block title%}{% endblock %}</title>
+    {%- if config.touchIcon %}
+    <link rel="apple-touch-icon" href="{{ config.touchIcon }}" />
+    {%- endif %}
+    {%- if config.feedurl %}
+    <link rel="alternate" type="application/rss+xml" href="{{config.feedurl}}" title="{{config.sitename}}" />
+    {%- endif %}
+    <link rel="stylesheet" href="https://github.com/themes/minimal/stylesheets/styles.css" />
+    <link rel="stylesheet" href="{{static_url('syntax.css')}}" />
+    <link rel="stylesheet" href="{{static_url('style.css')}}" />
+    {%- block afterstyle %}{% endblock %}
+    {%- if config.google %}
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', '{{config.google}}']);
+      _gaq.push(['_trackPageview']);
+      _gaq.push(['_trackPageLoadTime']);
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = 'https://ssl.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+    {%- endif %}
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>
+          <a class="home" href="{{content_url('index.html')}}">{{config.sitename}}</a>
+        </h1>
+        {%- if config.tagline %}
+          <p>{{ config.tagline }}</p>
+        {%- endif %}
+        {%- if config.navigation %}
+        <nav class="menu" role="navigation">
+          {%- for item in config.navigation %}
+          <p class="view">
+            <a href="{{content_url(item.link)}}">{{item.title}}</a>
+          </p>
+          {%- endfor %}
+        </nav>
+        {%- endif %}
+        {%- if config.github %}
+        <ul>
+          {%- for item in config.github %}
+            <li><a href="{{content_url(item.link)}}">Download <strong>{{item.title}}</strong></a></li>
+          {%- endfor %}
+        </ul>
+        {%- endif %}
+      </header>
+      <section>
+        {%- block document %}
+        {%- endblock %}
+      </section>
+      <footer>
+        {%- if config.footer %}
+        {{config.footer}}
+        {%- endif %}
+        {%- if not config.hideNico %}
+        <p class="copyright">powered by <a href="{{system.homepage}}">{{system.name}}</a> {{system.version}}</p>
+        {%- endif %}
+      </footer>
+    </div>
+    <script src="{{ static_url('script.js') }}"></script>
+  </body>
+</html>
