@@ -3,15 +3,15 @@
     "output": "_site",
     "theme": ".",
     "sitename": "Nico-minimal",
-    "tagline": "A Theme for Nico",
+    "tagline": "A minimal Theme for Nico",
     "navigation": [
         {"title": "Life", "link": "/life/index.html"},
         {"title": "Work", "link": "/work/index.html"}
     ],
     "github": [
-        {"title": "ZIP File", "link": "https://github.com/7anshuai/nico-one/zipballmus/master"},
-        {"title": "TAR Ball", "link": "https://github.com/7anshuai/nico-one/tarball/master"},
-        {"title": "GitHub", "link": "https://github.com/7anshuai/nico-one"}
+        {"title": "ZIP File", "link": "https://github.com/7anshuai/nico-minimal/zipballmus/master"},
+        {"title": "TAR Ball", "link": "https://github.com/7anshuai/nico-minimal/tarball/master"},
+        {"title": "GitHub", "link": "https://github.com/7anshuai/nico-minimal"}
     ],
     "permalink": "{{directory}}/{{filename}}.html",
     "writers": [
