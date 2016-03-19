@@ -12,9 +12,9 @@
     {%- if config.feedurl %}
     <link rel="alternate" type="application/rss+xml" href="{{config.feedurl}}" title="{{config.sitename}}" />
     {%- endif %}
-    <link rel="stylesheet" href="https://github.com/themes/minimal/stylesheets/styles.css" />
-    <link rel="stylesheet" href="{{static_url('syntax.css')}}" />
     <link rel="stylesheet" href="{{static_url('style.css')}}" />
+    <link rel="stylesheet" href="{{static_url('syntax.css')}}" />
+    <link rel="stylesheet" href="{{static_url('custom.css')}}" />
     {%- block afterstyle %}{% endblock %}
     {%- if config.google %}
     <script type="text/javascript">
