@@ -2,7 +2,7 @@
 {%- block title %}{{pagination.title}}{% endblock %}
 
 {%- block document %}
-<h1 class="entry-title">{{pagination.title}}</h1>
+<h3 class="entry-title">{{pagination.title}}</h3>
 <div class="entry-list">
   {%- set year = 0 %}
 
@@ -11,15 +11,15 @@
   {%- if config.writers|enabled('YearWriter') %}
   {%- if year != item.pubdate.year %}
   {%- set year = item.pubdate.year %}
-  <h2><a class="item-year" href="{{ index_url(year) }}">{{ year }}</a></h2>
+  <p><a class="item-year" href="{{ index_url(year) }}">{{ year }}</a></p>
   {%- endif %}
   {%- endif %}
 
   <div class="item" itemscope itemtype="http://schema.org/Article">
-    <h3 class="item-title">
+    <p class="item-title">
       <time datetime="{{item.pubdate|xmldatetime}}" itemprop="dateModified">{{item.pubdate|date('Y-m-d')}}</time>
       <a itemprop="name" href="{{permalink_url(item)}}">{{item.title}}</a>
-    </h3>
+    </p>
     {% if item.meta.description %}
     <div class="item-description" itemprop="description">
       {{ item.meta.description }}

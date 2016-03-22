@@ -14,7 +14,6 @@
     {%- endif %}
     <link rel="stylesheet" href="{{static_url('style.css')}}" />
     <link rel="stylesheet" href="{{static_url('syntax.css')}}" />
-    <link rel="stylesheet" href="{{static_url('custom.css')}}" />
     {%- block afterstyle %}{% endblock %}
     {%- if config.google %}
     <script type="text/javascript">
@@ -33,9 +32,7 @@
   <body>
     <div class="wrapper">
       <header>
-        <h1>
-          <a class="home" href="{{content_url('index.html')}}">{{config.sitename}}</a>
-        </h1>
+        <a href="{{content_url('index.html')}}"><h1>{{config.sitename}}</h1></a>
         {%- if config.tagline %}
           <p>{{ config.tagline }}</p>
         {%- endif %}
@@ -65,7 +62,7 @@
         {{config.footer}}
         {%- endif %}
         {%- if not config.hideNico %}
-        <p class="copyright">powered by <a href="{{system.homepage}}">{{system.name}}</a> {{system.version}}</p>
+        <p class="copyright"><small>powered by <a href="{{system.homepage}}">{{system.name}}</a> {{system.version}}</small></p>
         {%- endif %}
       </footer>
     </div>
