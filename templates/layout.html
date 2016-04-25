@@ -6,6 +6,9 @@
     <meta name="generator" content="{{system.name}} {{system.version}}">
     <meta name="theme" content="{{theme.name}} {{theme.version}}">
     <title>{% block title%}{% endblock %}</title>
+    {%- if config.favicon %}
+    <link rel="shortcut icon" href="{{ config.favicon }}" />
+    {%- endif %}
     {%- if config.touchIcon %}
     <link rel="apple-touch-icon" href="{{ config.touchIcon }}" />
     {%- endif %}
