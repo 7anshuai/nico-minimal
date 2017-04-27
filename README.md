@@ -36,6 +36,7 @@ Additional configuration this theme:
 - touchIcon: Link of Apple Touch Icon.
 - hideNico: Hide nico copyright at bottom.
 - github: Github link, a github fork badge will display.
+- github_issues: GitHub issues link, all comments of the issue will display.
 - navigation: A array of items of navigation.
 
 GitHub example:
@@ -78,5 +79,13 @@ If you prefer duoshuo:
 ```
 {
     "duoshuo": "short name"
+}
+```
+
+Use GitHub Comments:
+
+```
+{
+    "github_issues": "Your github repo issues url" // For example: https://github.com/7anshuai/nico-minimal/issues
 }
 ```
