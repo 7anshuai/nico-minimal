@@ -1,4 +1,4 @@
-<div class="gh-comments" data-comment-id="{{post.gh_issue_id}}" data-title="{{ post.title }}"></div>
+<div style="margin-top: 20px;" class="gh-comments" data-comment-id="{{post.gh_issue_id}}" data-title="{{ post.title }}"></div>
 <script type="text/javascript">
   (function (){
     if (!'{{post.gh_issue_id}}') return false;
@@ -23,8 +23,8 @@
       error.url = res.url;
       throw error;
     }).then((json) => {
-        gh_comments.insertAdjacentHTML('afterbegin', `<p>Visit the <a href="${gh_issue_url}">GitHub Issue</a> to comment on this post.</p>`);
-        gh_comments.insertAdjacentHTML('afterbegin', `<h3>GitHub Comments</h3>`);
+        gh_comments.insertAdjacentHTML('afterbegin', `<h3>GitHub Comments</h3>
+          <p>如有需要，请访问 <a href="${gh_issue_url}">GitHub Issue</a> 对文章进行评论。</p>`);
         for (let comment of json) {
           let date = new Date(comment.created_at);
           let c = '<div class="gh-comment">' +
@@ -38,8 +38,8 @@
           gh_comments.insertAdjacentHTML('beforeend', c);
         }
     }).catch((err) => {
-      gh_comments.insertAdjacentHTML('afterbegin', `<p>Comments are not open for this post yet</p>`);
-      gh_comments.insertAdjacentHTML('afterbegin', `<h3>GitHub Comments</h3>`);
+      gh_comments.insertAdjacentHTML('afterbegin', `<h3>GitHub Comments</h3>
+        <p>获取 GitHub 评论出错，或者还没有评论</p>`);
     })
   })();
 </script>
