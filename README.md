@@ -86,6 +86,6 @@ Use GitHub Comments:
 
 ```
 {
-    "github_issues": "Your github repo issues url" // For example: https://github.com/7anshuai/nico-minimal/issues
+    "githubIssues": "Your github repo issues url" // For example: https://github.com/7anshuai/nico-minimal/issues
 }
 ```

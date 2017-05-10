@@ -1,12 +1,12 @@
-<div style="margin-top: 20px;" class="gh-comments" data-comment-id="{{post.gh_issue_id}}" data-title="{{ post.title }}"></div>
+<div style="margin-top: 20px;" class="gh-comments" data-comment-id="{{post.issue}}" data-title="{{ post.title }}"></div>
 <script type="text/javascript">
   (function (){
-    if (!'{{post.gh_issue_id}}') return false;
+    if (!'{{post.issue}}') return false;
     var gh_comments = document.getElementsByClassName('gh-comments')[0];
     var a = document.createElement('a');
-    a.href = '{{config.github_issues}}';
+    a.href = '{{config.githubIssues}}';
     var gh_api = 'https://api.github.com/repos' + a.pathname;
-    var gh_issue_id = '{{post.gh_issue_id}}';
+    var gh_issue_id = '{{post.issue}}';
     var gh_issue_url = a.href +  '/' + gh_issue_id;
     var gh_comments_url = gh_api + '/' + gh_issue_id + '/comments';
     fetch(gh_comments_url, {
@@ -28,7 +28,7 @@
         for (let comment of json) {
           let date = new Date(comment.created_at);
           let c = '<div class="gh-comment">' +
-              `<img src="${comment.user.avatar_url}" width="24px"> ` +
+              `<img src="${comment.user.avatar_url}" width="24px" style="margin-bottom: 5px; vertical-align: middle;"> ` +
               `<a href="${comment.user.html_url}">${comment.user.login}</a>` +
               ' posted at ' +
               `<time>${date.toUTCString()}</time>` +
