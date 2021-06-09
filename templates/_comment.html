@@ -31,7 +31,7 @@
               `<img src="${comment.user.avatar_url}" width="24px" style="margin-bottom: 5px; vertical-align: middle;"> ` +
               `<a href="${comment.user.html_url}">${comment.user.login}</a>` +
               ' posted at ' +
-              `<time>${date.toUTCString()}</time>` +
+              `<time>${date.toLocaleString()}</time>` +
               '<hr>' +
               comment.body_html +
               '</div>';
